@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short cut icon" href="Imagenes/favicon (1).ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" type="text/css" href="CSS/EstiloIndex.css">
+    <link rel="stylesheet" type="text/css" href="CSS/EstiloMenu copy.css">
+
+    <!-- ESTILOS DESCARGADOS (ESTRELLAS DE CALIFICACION, BOTON CLOSE DEL preview)-->
+     <!-- custom css file link  -->
+     <link rel="stylesheet" type="text/css" href="CSS/EstiloMenu.css">
+
+     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+    
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       
+     <!-- font awesome cdn link  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+    
+    <title>SALCHIPAPADOS</title>
+</head>
+<body>
+   <header class="header">
+    <div class="logo">
+       <a href="index.html"> <img src="Imagenes/papas-fritas (1).png" alt="LOGO DE LA MARCA"></a>
+    </div>
+    <nav><!-- Aqui esta la barra de menu -->
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Nosotros.html">Nosotros</a></li>
+            <li><a href="#">Haz tu pedido!</a></li>
+        </ul>
+    </nav>
+    
+    <a href="Registro.html" class="btn"><button>Registrate</button></a><!-- Este es el boton de registro -->
+    <a onclick="openNav()" class="menu" href="Menu.php"><button>Menu</button></a><!-- Este es el boton responsive MENU -->
+
+    <div class="overlay" id="mobile-menu">
+        <a onclick="closeNav()" class="close" href="">&times;</a>
+        <div class="overlay-content"><!-- Este es el Menu responsive -->
+            <a href="index.html">Inicio</a>
+            <a href="Menu.html">Menu</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="#">Haz tu pedido!</a>
+            <a href="Registro.html">Registrate</a>
+        </div>
+ 
+    </div>
+    </header><!-- Barra de inicio-->
+
+    <section class="container-slider" width="100%">
+        <div class="carruseles" id="slider">
+            <div class="slider-section">
+                <img src="Imagenes/Salchipapa 1.jpg" alt="Salchi 1" width="100%">
+            </div>
+            <div class="slider-section">
+                <img src="Imagenes/Salchipapa 2.jpg" alt="Salchi 2" width="100%" >
+            </div>
+            <div class="slider-section">
+                <img src="Imagenes/Salchipapa 3.jpg" alt="Salchi 3" width="100%">
+            </div>
+        </div>
+        <div class="btn-left"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAXBJREFUaEPtmL0yBEEQx3/Hw/AWXoIEgVKSyyQSchKJRIKEhMgz3GPwLupOB6PW1p6bruluNVW98X9n/l/zsTuj82fWOX9SwH8nmAlkAo0OZIUaDWx+PRNotrBxgExAYeAesFDgq6BRCZwCT8A1cFXFrBIUIUDIP8LPvescuKvktxHmLeAMeJhgsQt8bGRXAfAUMHZe6CyBE+C5glsVxEtACHlR6CHgCHgZjW3ufInHWoCQl3psDfIX8ofAa1UnlCBLAeHkLSs0Rf4LOPZy3rJC+8DbqDZC/gB4VzZCDW+tkJCXbm8PZg4jb1Gh7gWICV1XqDSn60X8lwjXM8BiDYx3jfCzoHUXmtr2ur5KFEFdX+ZCRXhUaFirdR80O98XvE/1sTvxgrcAmbJ8D5fpL4BbC/Ieu9A6XnPgHrgBLq3IRwqQubr+rWJp+q+xItaAG/noCrkIyQRcbFUMmgkozHKBZgIutioGzQQUZrlAu09gBUpnPjGlkdNbAAAAAElFTkSuQmCC"/> </div>
+        <div class="btn-right"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAVZJREFUaEPtlz1OAzEQhb+I05BDIK6QChpogJYmFfTQ0NBSgCiAhhwCcQe4DT+ytCslaDeJNW8GWZotd+3xfO951uMJjT+TxvMnAf7bwXQgHTAqkFvIKKB5ejpgltAYIB0YEXAfeDOKu9V0DwdugDlwCjxslYVhkBrgArju8vmJgFAC7AKfA2IWJ+4NIq+dqgQoC50Bd7DS5RYnjoBnDwg1QMnxGHj8A/HdvZdDeACEQngBhEF4AhSIQ+BlYDsdAAtFTXgDjEF8dXBmiAgAV4gogB7iCdhZ2jpmJyIBZsBrqwClmOXqFycjHHD9E3kDjCVfTmvJqewJENJSeAGEJO9VA2HJewA03U5PgY+B/ubE82qproFL4KrVK2Uv/i1wHnEf9qiBHmIPeFe0y5tiqLfQpvXk3xNALmllwHSgUjD58HRALmllwHSgUjD58HRALmllwOYd+AWdvUAxCyRZdgAAAABJRU5ErkJggg=="/> </div>
+    </section><!-- Slider-->
+
+    <!-- Falta-->
+
+    <main>
+        <section class="Menu">
+            <div class="container">
+
+                <h3 class="title"> LAs SAlchis </h3>
+             
+                <div class="products-container">
+             
+                   <div class="product" data-name="p-1">
+                      <img src="Imagenes/Salchipapa 1 - copia.jpg" alt="">
+                      <h3>Clasica</h3>
+                      <div class="price">$12.000</div>
+                   </div>
+             
+                   <div class="product" data-name="p-2">
+                      <img src="Imagenes/Salchipapa 2.jpg" alt="">
+                      <h3>Americana</h3>
+                      <div class="price">$12.000</div>
+                   </div>
+             
+                   <div class="product" data-name="p-3">
+                      <img src="Imagenes/Salchi 3.jpg" alt="">
+                      <h3>La Pollo</h3>
+                      <div class="price">$12.000</div>
+                   </div>
+             
+                   <div class="product" data-name="p-4">
+                      <img src="Imagenes/Salchi 4.jpg" alt="">
+                      <h3>Mexicana</h3>
+                      <div class="price">$12.000</div>
+                   </div>
+             
+                   <div class="product" data-name="p-5">
+                      <img src="Imagenes/Quizas.jpg" alt="">
+                      <h3>Ranchera</h3>
+                      <div class="price">$12.000</div>
+                   </div>
+             
+                   <div class="product" data-name="p-6">
+                      <img src="Imagenes/Salchi 6.png" alt="">
+                      <h3>potatoes</h3>
+                      <div class="price">$12.000</div>
+                   </div>
+             
+                </div>
+             
+             </div>
+             
+             <div class="products-preview">
+             
+                <div class="preview" data-target="p-1">
+                   <i class="fas fa-times"></i><!-- Lugar de cerrar el preview-->
+                   <img src="Imagenes/Salchipapa 1.jpg" alt="">
+                   <h3>Clasica</h3>
+                   <div class="stars"><!-- Estrellas de calidad-->
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i><!-- Estrella a la mitad-->
+                      <span>( 250 )</span>
+                   </div>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                   <div class="price">$12.000</div>
+                   <div class="buttons">
+                      <a href="#" class="buy">buy now</a>
+                      <a href="#" class="cart">add to cart</a>
+                   </div>
+                </div>
+             
+                <div class="preview" data-target="p-2">
+                   <i class="fas fa-times"></i>
+                   <img src="Imagenes/Salchipapa 2.jpg" alt="">
+                   <h3>Americana</h3>
+                   <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span>( 250 )</span>
+                   </div>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                   <div class="price">$12.000</div>
+                   <div class="buttons">
+                      <a href="#" class="buy">buy now</a>
+                      <a href="#" class="cart">add to cart</a>
+                   </div>
+                </div>
+             
+                <div class="preview" data-target="p-3">
+                   <i class="fas fa-times"></i>
+                   <img src="Imagenes/Salchi 3.jpg" alt="">
+                   <h3>La Pollo</h3>
+                   <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span>( 250 )</span>
+                   </div>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                   <div class="price">$12.000</div>
+                   <div class="buttons">
+                      <a href="#" class="buy">buy now</a>
+                      <a href="#" class="cart">add to cart</a>
+                   </div>
+                </div>
+             
+                <div class="preview" data-target="p-4">
+                   <i class="fas fa-times"></i>
+                   <img src="Imagenes/Salchi 4.jpg" alt="">
+                   <h3>Mexicana</h3>
+                   <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span>( 250 )</span>
+                   </div>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                   <div class="price">$12.000</div>
+                   <div class="buttons">
+                      <a href="#" class="buy">buy now</a>
+                      <a href="#" class="cart">add to cart</a>
+                   </div>
+                </div>
+             
+                <div class="preview" data-target="p-5">
+                   <i class="fas fa-times"></i>
+                   <img src="Imagenes/Quizas.jpg" alt="">
+                   <h3>Ranchera</h3>
+                   <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span>( 250 )</span>
+                   </div>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                   <div class="price">$12.000</div>
+                   <div class="buttons">
+                      <a href="#" class="buy">buy now</a>
+                      <a href="#" class="cart">add to cart</a>
+                   </div>
+                </div>
+             
+                <div class="preview" data-target="p-6">
+                   <i class="fas fa-times"></i>
+                   <img src="Imagenes/Salchi 6.png" alt="">
+                   <h3>Potatoes</h3>
+                   <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span>( 250 )</span>
+                   </div>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                   <div class="price">$12.000</div>
+                   <div class="buttons">
+                      <a href="#" class="buy">buy now</a>
+                      <a href="#" class="cart">add to cart</a>
+                   </div>
+                </div>
+             
+             </div>
+        </section> <!-- Menu-->
+
+<div class="container-fluid my-5">
+        <div class="container">
+            <div class=" position-relative overlay-top overlay-bottom">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 my-5 my-lg-0">
+                        <div class="p-5">
+                            
+                            <p class="text-white">CONTACTANOS</p>
+                            <ul class="list-inline text-white m-0">
+                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Deliciosas Salchipapas</li>
+                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Bebidas Refrescantes</li>
+                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Servicio de Calidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center p-5" style="background: rgba(202, 47, 47, 0.541);">
+                            <h1 class="text-white mb-4 mt-5">CONTACTANOS</h1>
+                            <form class="mb-5" id="mainForm" method="post">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control bg-transparent border-primary p-4" placeholder="Nombre" id="name"
+                                        required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="correo" class="form-control bg-transparent border-primary p-4" placeholder="Correo" id="email"
+                                        required="required" />
+                                </div>
+                               
+                                <div class="form-group">
+                                    <div class="date" id="date" data-target-input="nearest">
+                                        <input type="date" name="fecha" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker"/>
+                                    </div>
+                                </div>
+                               
+                                
+                                <div class="control-group">
+                                 <textarea class="form-control bg-transparent py-3 px-4" rows="5" id="message" name="textarea" placeholder="Mensaje"
+                                     required="required"
+                                     data-validation-required-message="Por favor ingresa un mensaje"></textarea>
+                                 <p class="help-block text-danger"></p>
+                             </div>
+                                
+                                <div>
+                                    <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit" name="Enviar">Enviar mensaje!</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <?php
+      include_once 'control/Mysql.sql';
+      if(isset($_POST['Enviar']))
+      {
+           $nombre = $_POST['name'];
+           $correo = $_POST['correo'];
+           $fecha = $_POST['fecha'];
+           $textarea = $_POST['textarea'];
+  
+          
+          $sentencia = $conexion->prepare("insert into tbl_mensajes (Nombre, Correo, Fecha, Mensaje)values(?,?,?,?);"); 
+          $resultado = $sentencia->execute([$nombre,$correo,$fecha,$textarea]);
+          
+        
+          if($resultado == true)
+          {
+
+              //echo "REGISTRADO CORRECTAMENTE";
+          } else {
+            // Imprime información sobre el error
+            print_r($sentencia->errorInfo());
+        }
+      }
+      
+    ?>
+        <section class="nosotros">
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    
+    <script type="text/javascript" src="JAVASCRIPT/nav.js"></script>
+    <script type="text/javascript" src="JAVASCRIPT/slider.js"></script>
+    <script type="text/javascript" src="JAVASCRIPT/menu.js"></script>
+    
+</body>
+
+</html>
+<!-- 
+    Faltaz haz tu pedido
+    Falta Nosotros
+    Falta hacer toda la pagina en el index
+    Falta cambiar colores a el hober de los botones de registro y login
+    falta hacer el carrito de compras
+    falta hacer la busqueda
+ -->

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;/*Quita los espacios en blanco en la pagina en general*/
+    padding: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 20px;
+
+}
+
+body {
+    
+    background: url(../Imagenes/Fondo_Registro.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.header {
+    background-color: #b81414;
+    display: flex;
+    justify-content: space-between;/*Pone un espacio entre los objetos*/
+    align-items: center;/*Centra los objetos*/
+    height: 85px;
+    padding: 5px 10%;
+}
+.header .logo{
+    cursor: pointer;/*al pasar por el icono pone una manito*/
+    transition: all 0.3s;
+}
+.header .logo img:hover{
+   transform: scale(1.2);/*Efecto de agrandar el icono principal*/
+}
+
+.header .nav-links{
+    list-style: none;
+}
+.header .nav-links li{
+    display: inline-block; /*pasa de vertical a Horizontal*/
+    padding: 0 20px;
+}
+.header .nav-links li:hover{
+    transform:scale(1.1) ;/*Efecto de agrandar*/
+}
+.header .nav-links li a:hover{
+    color:yellow ;
+}
+.header .nav-links a{
+    color: rgb(252, 252, 252);
+    
+    font-size: 700;
+}
+.menu{
+    display: none;
+}
+.header .btn button,
+.header .menu button{
+    font-weight: 700;/*pone el estilo 700 de nanito*/
+    padding: 9px 25px;/*engranda el boton*/
+    border: none;/*Quita bordes*/
+    border-radius: 50px;/*hace mas redonda la forma*/
+    cursor: pointer;/*al pasar por el boton pone una manito*/
+    transition: all 0.3s ease 0s;
+
+}
+.header .btn button:hover,
+.header .menu button:hover{
+    background-color: yellow;
+    transform: scale(1.1);
+
+}
+
+@media screen and (max-width: 800px) {
+    .nav-links, .btn{
+        display: none;
+    }
+    .menu {
+        display: inherit;
+    }
+    
+}
+
+/*NAV*/
+.header a{
+    text-decoration: none;
+}
+.header .overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;/*arregla todo lo desorganizado*/
+    z-index: 1;/*para que se sobre ponga*/
+    left: 0;/*left envia a todos lo elementos a la izquierda*/
+    top: 0;/*top envia a todos lo elementos a hacia arriba*/
+    background-color: #0E1317;
+    overflow: hidden;/*esconde los elementos*/
+    transition: all 0.3s ease 0s; /*transicion de deracha a izquierda*/
+}
+.header .overlay .overlay-content{
+    color: white;
+    display: flex;
+    height: 100%;
+    flex-direction: column; /*pone en orden orizontal en una sola columna*/
+    align-items: center;/*centra los objetos, de derecha a izquierda hay el mismo espacio*/
+    justify-content: center;/*centra los objetos, de arriba hacia abajo hay el mismo espacio*/
+
+}
+.header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    font-weight: 700;
+    transition: all 0.3s ease 0s; 
+    color: aliceblue;
+}
+.header .overlay a:hover,/*cunado pasa por encima el cursor se pinta del color de abajo*/
+.header .overlay a:focus{/*cuando se da click cambia el texto de color*/
+    color: #b81414;
+    transform: scale(1.1);/*Efecto de agrandar el icono principal*/
+}
+.header .overlay .close{
+    /*Configurando el boton "X" */
+    position: absolute;
+    top: 20px;
+    
+    right: 45px;
+    font-size: 65px;
+    
+}
+
+@media screen and (max-height:450px) {
+    .header .overlay a{
+        font-size: 20px;
+    }
+    .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.contenedor{
+    width: 100%;
+    padding: 15px;
+}
+.formulario{
+    background: aliceblue;
+    margin-top: 150px;
+    padding: 3px;
+}
+h1{
+    text-align: center;
+    color: #b81414;
+    font-size: 40px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+
+}
+.icon{
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+.button{
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #b81414;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background: rgb(161, 161, 75); /*deberias cambiar este color*/
+}
+p{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+    color: #b81414;
+    font-weight: 600;
+}
+.link:hover{
+    color: rgb(161, 161, 75);/*deberias cambiar este color*/
+}
+@media(min-width: 768px)/*Esto permite que la pagina sea responsive, a partir de 768px cambia la pagina*/
+{
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 80px;
+        border-radius: 2%;
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short cut icon" href="Imagenes/favicon (1).ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="CSS/EstiloRegistro.css">
+    <script src="https://kit.fontawesome.com/e0453a4267.js" crossorigin="anonymous"></script><!-- Esto es para utilizar logo de una web llamada fontawesome  -->
+    <title>REGISTRO</title>
+</head>
+<body>
+   <header class="header">
+    <div class="logo">
+        <a href="index.php"> <img src="Imagenes/papas-fritas (1).png" alt="LOGO DE LA MARCA"></a>
+    </div>
+    <nav><!-- Aqui esta la barra de menu -->
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Nosotros.html">Nosotros</a></li>
+            <li><a href="#">Haz tu pedido!</a></li>
+        </ul>
+    </nav>
+    
+   
+    <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a><!-- Este es el boton responsive MENU -->
+
+    <div class="overlay" id="mobile-menu">
+        <a onclick="closeNav()" class="close" href="">&times;</a>
+        <div class="overlay-content"><!-- Este es el Menu responsive -->
+            <a href="index.html">Inicio</a>
+            <a href="Menu.html">Menu</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="#">Haz tu pedido!</a>
+            <a href="Registro.html">Registrate</a>
+        </div>
+ 
+    </div>
+    </header>
+
+    <form class="formulario" action="Registro.html" method="post">
+        <h1>Registrate</h1>
+        <div class="contenedor">
+            <div class="input-contenedor" >
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" placeholder="Nombre Completo" name="nombre" >
+
+            </div>
+            <div class="input-contenedor">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input type="email" placeholder="Correo Electronico" name="correo">
+
+            </div>
+            <div class="input-contenedor">
+                <i class="fa-solid fa-key icon"></i>
+                <input type="password" placeholder="Contraseña" name="password" >
+
+            </div>
+            <input type="submit" value="Registrate" class="button" name="registro"> 
+
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Politicas de privacidad.</p>
+            <p>Ya tienes una cuenta? <a class="link" href="Login.html">Iniciar Sesion</a></p>
+
+        </div>
+    </form>
+   
+
+    <?php
+      include_once 'control/Mysql.sql';
+      if(isset($_POST['registro']))
+      {
+           $nombre = $_POST['nombre'];
+           $correo = $_POST['correo'];
+           $password = $_POST['password'];
+  
+          
+          $sentencia = $conexion->prepare("insert into usuario (Nombre, Correo, Password)values(?,?,?);"); 
+          $resultado = $sentencia->execute([$nombre,$correo,$password]);
+          
+        
+          if($resultado == true)
+          {
+
+              //echo "REGISTRADO CORRECTAMENTE";
+          }
+      }
+      
+    ?>
+
+
+    <script type="text/javascript" src="JAVASCRIPT/nav.js"></script>
+    
+</body>
+</html>
